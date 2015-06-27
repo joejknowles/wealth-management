@@ -7,14 +7,15 @@ rateMyPortfolio.controller('InvestmentsController', [function () {
     {'name': 'Aberdeen Fund', 'value': 1000, 'sector': 'Mixed'},
     {'name': 'Aberystwyth Fund', 'value': 100, 'sector': 'Mixed'},
     {'name': 'Liversedge Fund', 'value': 10, 'sector': 'Agriculture'},
-    {'name': 'Brno Fund', 'value': 1000000, 'sector': 'IT'},
+    {'name': 'Brno Fund', 'value': 1000, 'sector': 'IT'},
     {'name': 'Leeds Fund', 'value': 20, 'sector': 'Financial'},
     {'name': 'London Fund', 'value': 2000, 'sector': 'Mixed'}
   ];
 
   self.diversity = function () {
     var total = 0;
-    for (var sectorName in self.totalInvestedEachSector()) {
+    var totalInvestedEachSector = self.totalInvestedEachSector();
+    for (var sectorName in totalInvestedEachSector) {
       var proportion = self.findSectorProportion(sectorName);
       total += (proportion * proportion);
     };
@@ -27,7 +28,7 @@ rateMyPortfolio.controller('InvestmentsController', [function () {
 
   self.totalInvestedEachSector = function () {
     var sectors = {};
-    for (i = 0; i < self.investments.length; i++) {
+    for ( var i = 0; i < self.investments.length; i++) {
       investment = self.investments[i]
       if (!sectors[investment.sector]) {
         sectors[investment.sector] = 0;

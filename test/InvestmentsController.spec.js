@@ -24,7 +24,7 @@ describe('InvestmentsController', function () {
   });
 
   it('returns a diversity index', function () {
-    expect(ctrl.diversity()).toBe(0.01);
+    expect(ctrl.diversity()).toBe(0.38);
   });
 
   it('returns a different diversity index', function () {
@@ -33,11 +33,11 @@ describe('InvestmentsController', function () {
   });
 
   it('returns total for each sector', function () {
-    expect(ctrl.totalInvestedEachSector()).toEqual({ Mixed: 3100, Agriculture: 10, IT: 1000000, Financial: 20 });
+    expect(ctrl.totalInvestedEachSector()).toEqual({ Mixed: 3100, Agriculture: 10, IT: 1000, Financial: 20 });
   });
 
   it('returns total invested', function () {
-    expect(ctrl.totalInvested()).toEqual(1003130);
+    expect(ctrl.totalInvested()).toEqual(4130);
   });
 
 });

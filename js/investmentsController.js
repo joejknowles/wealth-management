@@ -5,6 +5,7 @@ rateMyPortfolio.controller('InvestmentsController', ['AvailableFunds', function 
   ];
 
   self.addFund = function (fund_index) {
+    self.data.push({label: AvailableFunds.list()[fund_index].name, value: AvailableFunds.list()[fund_index].value, color: AvailableFunds.list()[fund_index].color})
     self.investments.push(AvailableFunds.list()[fund_index]);
   }
 
@@ -41,5 +42,8 @@ rateMyPortfolio.controller('InvestmentsController', ['AvailableFunds', function 
     }
     return total;
   };
+
+  self.data = [
+]
 
 }]);

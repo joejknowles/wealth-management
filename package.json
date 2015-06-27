@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/joejknowles/wealth-management",
   "devDependencies": {
+    "angular-mocks": "^1.4.1",
     "karma": "^0.12.36",
     "karma-chrome-launcher": "^0.1.12",
     "karma-jasmine": "^0.3.5",
@@ -25,6 +26,8 @@
     "protractor": "^2.1.0"
   },
   "dependencies": {
+    "angular": "^1.4.1",
+    "angular-resource": "^1.4.1",
     "http-server": "^0.8.0"
   }
 }

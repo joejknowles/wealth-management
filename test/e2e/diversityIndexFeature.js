@@ -1,14 +1,17 @@
 describe('Fund Listings Feature', function () {
 
-  var investments;
+  var availableFunds;
 
   beforeEach(function () {
     browser.get('http://localhost:8080');
-    investments = element.all(by.repeater('fund in Investments.investments'));
+    availableFunds = element.all(by.repeater('fund in FundsAvailable.list'));
   });
 
   it('shows a diversity index', function() {
-    expect($('#diversityIndex').getText()).toContain('Diversity Index: 0.38');
+    availableFunds.get(0).$('#add').click();
+    availableFunds.get(1).$('#add').click();
+    availableFunds.get(2).$('#add').click();
+    expect($('#diversityIndex').getText()).toContain('Diversity Index: 0.02');
   });
 
 });

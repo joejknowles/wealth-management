@@ -22,7 +22,7 @@ module.exports = function (config) {
       "js/availableFundsFactory.js",
       "js/diversityFactory.js",
       "js/availableFundsController.js",
-      "js/portfolioController.js",
+      "js/investmentsController.js",
       'test/**/*.spec.js'
     ],
 

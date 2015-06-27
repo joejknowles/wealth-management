@@ -11,16 +11,32 @@
 <script src="js/availableFundsFactory.js"></script>
 <script src="js/diversityFactory.js"></script>
 <script src="js/availableFundsController.js"></script>
-<script src="js/portfolioController.js"></script>
+<script src="js/investmentsController.js"></script>
 <body>
+
+  <h1>Rate My Portfolio</h1>
   <div ng-controller="InvestmentsController as Investments">
-    <div ng-repeat="fund in Investments.investments">
-      <div>
-        <div id="fundTitle"> {{ fund.name }} </div>
-        <div id="amountInvested"> £{{ fund.value }} </div>
-        <div id="sector"> Primarily invests in: {{ fund.sector }} </div>
+    <h2>Browse Funds:</h2>
+    <div ng-controller="AvailableFundsController as FundsAvailable">
+      <div ng-repeat="fund in FundsAvailable.list()">
+          <div id="fundTitle"> {{ fund.name }} </div>
+          <div id="amountInvested"> £{{ fund.value }} </div>
+          <div id="sector"> Primarily invests in: {{ fund.sector }} </div>
+          <button id="add" ng-click="Investments.addFund($index)">Add to my portfolio</button>
       </div>
     </div>
-    <div id="diversityIndex"> Diversity Index: {{ Investments.diversity() }} </div>
+
+    <h2>Your Investments:</h2>
+
+      <div ng-repeat="fund in Investments.investments">
+        <div>
+          <div id="fundTitle"> {{ fund.name }} </div>
+          <div id="amountInvested"> £{{ fund.value }} </div>
+          <div id="sector"> Primarily invests in: {{ fund.sector }} </div>
+        </div>
+      </div>
+    <div id="diversityIndex">
+      <h3> Diversity Index: {{ Investments.diversity() }} </h3>
+    </div>
   </div>
 </body>

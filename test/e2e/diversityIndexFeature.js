@@ -8,7 +8,7 @@ describe('Fund Listings Feature', function () {
   });
 
   it('shows a diversity index', function() {
-    expect($('#diversityIndex').getText()).toContain('Diversity Index: 0.5');
+    expect($('#diversityIndex').getText()).toContain('Diversity Index: 0.38');
   });
 
 });

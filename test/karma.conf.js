@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Thu Nov 27 2014 10:43:21 GMT+0000 (GMT)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -18,7 +18,11 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-resource/angular-resource.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'js/app.js',
+      "js/app.js",
+      "js/availableFundsFactory.js",
+      "js/diversityFactory.js",
+      "js/availableFundsController.js",
+      "js/portfolioController.js",
       'test/**/*.spec.js'
     ],
 
